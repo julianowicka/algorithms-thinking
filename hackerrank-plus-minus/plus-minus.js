@@ -32,7 +32,7 @@ function plusMinus(arr) {
     let zerosNumbersCount = 0;
 
     for (let i = 0; i < arr.length; i++) {
-        let currentValue = arr[i];
+        const currentValue = arr[i];
         if (currentValue === 0) {
             zerosNumbersCount++;
         } else if (currentValue > 0) {

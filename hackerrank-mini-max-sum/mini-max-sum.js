@@ -32,7 +32,7 @@ function miniMaxSum(arr) {
     let totalSum = 0;
 
     for (let i = 0; i < arr.length; i++) {
-        let currentValue = arr[i];
+        const currentValue = arr[i];
         totalSum += currentValue;
         if (currentValue > max){
              max = currentValue;
