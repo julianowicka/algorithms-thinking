@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug TypeScript with tsx",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/leet-code-palindrome/solution.ts",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["tsx"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}
