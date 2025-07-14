@@ -5,7 +5,7 @@
       "name": "Debug TypeScript with tsx",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/leet-code-palindrome/solution.ts",
+      "program": "${workspaceFolder}/roman-to-integer/solution.ts",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["tsx"],
       "console": "integratedTerminal",
