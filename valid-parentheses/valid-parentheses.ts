@@ -19,34 +19,36 @@ class Stack {
         return this.array[this.array.length - 1]
     }
 }
-const stack3 = new Stack()
-stack3.pop()
-const stack1 = new Stack()
-const stack2 = new Stack()
-console.log("stack", stack1)
-stack1.push("0")
-stack2.push("8")
-stack2.push("69")
-
-const peek2 = stack2.peek();
-console.log("peek2", peek2)
-console.log("peeeek2", stack2.peek())
-"69";
 
 
-stack2.push("0")
-stack2.push("4")
-console.log("stack2222222", stack2)
-console.log("stack", stack1)
-stack1.push("1")
-console.log("stack", stack1)
-stack1.push("2")
-console.log("stack", stack1)
-const popped1 = stack1.pop()
-console.log("popped1", popped1)
-console.log("stack", stack1)
-stack1.push("5")
-console.log("stack", stack1)
-const popped2 = stack1.pop()
-console.log("popped", popped2)
-console.log("final stack", stack1)
+function validParentheses(value: string): boolean {
+    const stack = new Stack()
+
+    for ( let i = 0; i < value.length; i++) {
+        console.log("value", value[i])
+        const current = value[i]
+        if ( current ==="(" || current ==="[" || current ==="{") {
+            stack.push(current)
+        } else {
+            const lastOpened = stack.pop()
+            if (current === ")" && lastOpened !== "(") {
+                return false
+            }
+            if (current === "}" && lastOpened !== "{") {
+                return false
+            }
+            if (current === "]" && lastOpened !== "[") {
+                return false
+            }
+        }
+        
+    }
+    console.log("stack", stack)
+        return stack.array.length === 0    
+        //sprawdzenie
+}
+const result = validParentheses("(((())")
+console.log("result", result )
+
+const result2 = validParentheses("((()))")
+console.log("result2", result2 )
