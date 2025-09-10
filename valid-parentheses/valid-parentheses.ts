@@ -1,5 +1,5 @@
 class Stack {
-    array: string[] = []
+    private array: string[] = []
 
     constructor() {
         this.array = []
@@ -18,6 +18,15 @@ class Stack {
     peek(): string {
         return this.array[this.array.length - 1]
     }
+
+    size(): number {
+        return this.array.length
+    }
+
+    isEmpty(): boolean {
+        return this.array.length === 0
+    }
+
 }
 
 
@@ -25,11 +34,13 @@ function validParentheses(value: string): boolean {
     const stack = new Stack()
 
     for ( let i = 0; i < value.length; i++) {
-        console.log("value", value[i])
         const current = value[i]
         if ( current ==="(" || current ==="[" || current ==="{") {
             stack.push(current)
         } else {
+             if (stack.isEmpty()) {
+                return false
+            }
             const lastOpened = stack.pop()
             if (current === ")" && lastOpened !== "(") {
                 return false
@@ -44,11 +55,11 @@ function validParentheses(value: string): boolean {
         
     }
     console.log("stack", stack)
-        return stack.array.length === 0    
-        //sprawdzenie
+    return stack.isEmpty()  
 }
-const result = validParentheses("(((())")
+
+const result = validParentheses("(())")
 console.log("result", result )
 
-const result2 = validParentheses("((()))")
+const result2 = validParentheses("()))")
 console.log("result2", result2 )
