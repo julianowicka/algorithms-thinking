@@ -5,7 +5,7 @@
       "name": "Debug TypeScript with tsx",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/valid-parentheses/valid-parentheses.ts",
+      "program": "${workspaceFolder}/valid-parentheses/solution-map-set.ts",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["tsx"],
       "console": "integratedTerminal",
