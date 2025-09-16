@@ -35,10 +35,10 @@ function validParentheses(value: string): boolean {
 
     for ( let i = 0; i < value.length; i++) {
         const current = value[i]
-        if ( current ==="(" || current ==="[" || current ==="{") {
+        if (current ==="(" || current ==="[" || current ==="{") {
             stack.push(current)
         } else {
-             if (stack.isEmpty()) {
+            if (stack.isEmpty()) {
                 return false
             }
             const lastOpened = stack.pop()
