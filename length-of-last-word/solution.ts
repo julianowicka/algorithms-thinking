@@ -1,6 +1,6 @@
 function lengthOfLastWord(s: string): number {
     let index = s.length - 1
-    while (s[index] === " ") {
+    while (s[index] === " " && index >= 0) {
         index--
     }
     let counter = 0
