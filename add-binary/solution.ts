@@ -1,28 +1,62 @@
 function addBinary(a: string, b: string): string {
     let sumResult = ""
-    const smallerLength = Math.min(a.length, b.length)
-    let rest = 0
-    for (let i = 0; i < smallerLength + 1; i++) {
-        const aIndex = a.length - 1 - i
-        const bIndex = b.length - 1 - i
+    let aIndex = a.length - 1
+    let bIndex = b.length - 1
+    let carry = 0
 
-        let currentSum = Number(a[aIndex] ?? 0) + Number(b[bIndex] ?? 0) + rest
-        if (currentSum === 2) {
-            currentSum = 1
-            rest = 1
+    while (aIndex >= 0 || bIndex >= 0) {
+        let sum = carry
+        if (aIndex >= 0) {
+            sum = sum + Number(a[aIndex])
+            aIndex = aIndex - 1
         }
-        sumResult = String(currentSum) + sumResult 
+        if (bIndex >= 0) {
+            sum = sum + Number(b[bIndex])
+            bIndex--
+        }
+        const result = String(sum % 2)
+        sumResult = result + sumResult 
+        if (sum >=2) {
+            carry = 1
+        } else {
+            carry = 0
+        }
     }
-
-    let longerString = a
-    if (a.length < b.length) {
-        longerString = b
+    if (carry === 1) {
+        sumResult = String(carry) + sumResult
     }
-
-    const beginning = longerString.substring(0, longerString.length - smallerLength - 1)
-
-    return beginning + sumResult   
+    return sumResult
 };
 
-const result = addBinary("###10101", "1011")
+
+
+function addBinary(a: string, b: string): string {
+    let sumResult = ""
+    let aIndex = a.length - 1
+    let bIndex = b.length - 1
+    let carry = 0
+
+    while (aIndex >= 0 || bIndex >= 0 || carry > 0) {
+        let sum = carry
+        if (aIndex >= 0) {
+            sum = sum + Number(a[aIndex])
+            aIndex = aIndex - 1
+        }
+        if (bIndex >= 0) {
+            sum = sum + Number(b[bIndex])
+            bIndex--
+        }
+        const result = String(sum % 2)
+        sumResult = result + sumResult 
+        if (sum >=2) {
+            carry = 1
+        } else {
+            carry = 0
+        }
+    }
+
+    return sumResult
+};
+
+const result = addBinary("101", "101")
 console.log("result", result)
