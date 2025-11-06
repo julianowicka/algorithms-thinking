@@ -5,7 +5,7 @@
       "name": "Debug TypeScript with tsx",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/valid-palindrome/solution.ts",
+      "program": "${workspaceFolder}/check-even-or-odd/solution.ts",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["tsx"],
       "console": "integratedTerminal",
