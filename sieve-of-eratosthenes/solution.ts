@@ -24,5 +24,5 @@ function sieveOfEratosthenes(n: number): number[] {
     return primes;
   }
   
-  console.log(sieveOfEratosthenes(10));
+  console.log(sieveOfEratosthenes(11));
   console.log(sieveOfEratosthenes(35)); 
