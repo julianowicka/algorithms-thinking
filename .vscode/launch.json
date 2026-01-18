@@ -5,7 +5,7 @@
       "name": "Debug TypeScript with tsx",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/sum-of-digits/solution.ts",
+      "program": "${workspaceFolder}/primality-test/solution.ts",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["tsx"],
       "console": "integratedTerminal",
